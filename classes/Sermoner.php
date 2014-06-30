@@ -377,14 +377,17 @@ class Sermoner extends \Frontend
 			$objTemplate->player = $contentPlayer->generate();
 		}
 		
-		$linkedRssFeed = \SermonFeedModel::findByPk($objSermon->getRelated('pid')->linkedRssFeed);
-		if($linkedRssFeed)
-		{
-			$objTemplate->feedHref = sprintf("%s/share/%s.xml",
-			\Environment::get('path'),
-			$linkedRssFeed->alias
-			);	
+		if($objSermon->getRelated('pid')->showRssFeed){
+			$linkedRssFeed = \SermonFeedModel::findByPk($objSermon->getRelated('pid')->linkedRssFeed);
+			if($linkedRssFeed)
+			{
+				$objTemplate->feedHref = sprintf("%s/share/%s.xml",
+				\Environment::get('path'),
+				$linkedRssFeed->alias
+				);	
+			}
 		}
+		
 	
 		$objTemplate->addReference = false;
 

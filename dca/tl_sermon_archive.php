@@ -132,8 +132,8 @@ $GLOBALS['TL_DCA']['tl_sermon_archive'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'__selector__'                => array('skipReader','protected'),
-		'default'                     => '{title_legend},title,jumpTo,skipReader;{protected_legend:hide},protected'
+		'__selector__'                => array('skipReader','protected','showRssFeed'),
+		'default'                     => '{title_legend},title,jumpTo,skipReader;{protected_legend:hide},protected;{rss_legend},showRssFeed;'
 	),
 
 	// Subpalettes
@@ -141,6 +141,7 @@ $GLOBALS['TL_DCA']['tl_sermon_archive'] = array
 	(
 		'skipReader'                  => 'jumpToList',
 		'protected'                   => 'groups',
+		'showRssFeed'				  => 'linkedRssFeed'
 	),
 
 	// Fields
@@ -191,6 +192,26 @@ $GLOBALS['TL_DCA']['tl_sermon_archive'] = array
 			'sql'                     => "blob NULL",
 			'relation'                => array('type'=>'hasMany', 'load'=>'lazy')
 		),
+		'showRssFeed' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_sermon_archive']['showRssFeed'],
+			'exclude'                 => true,
+			'filter'                  => true,
+			'inputType'               => 'checkbox',
+			'eval'                    => array('submitOnChange'=>true),
+			'sql'                     => "char(1) NOT NULL default ''"
+		),
+		'linkedRssFeed' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_sermon_archive']['linkedRssFeed'],
+			'exclude'                 => true,
+			'inputType'               => 'select',
+			'foreignKey'              => 'tl_sermon_feed.title',
+			'eval'                    => array('mandatory'=>true),
+			'sql'                     => "int(10) unsigned NOT NULL default '0'",
+			'relation'                => array('type'=>'hasOne', 'load'=>'lazy')
+		)
+
 	)
 );
 
