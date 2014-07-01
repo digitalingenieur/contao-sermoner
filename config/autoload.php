@@ -26,19 +26,19 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Classes
-	'sermoner\Sermoner'            => 'system/modules/sermoner/classes/Sermoner.php',
+	'sermoner\Sermoner'            	=> 'system/modules/sermoner/classes/Sermoner.php',
 	'sermoner\FeedPodcast'          => 'system/modules/sermoner/classes/FeedPodcast.php',
 
 	// Elements
-	'sermoner\ContentChosenSermon' => 'system/modules/sermoner/elements/ContentChosenSermon.php',
-	'sermoner\ContentLatestSermon' => 'system/modules/sermoner/elements/ContentLatestSermon.php',
+	'sermoner\ContentChosenSermon' 	=> 'system/modules/sermoner/elements/ContentChosenSermon.php',
+	'sermoner\ContentLatestSermon' 	=> 'system/modules/sermoner/elements/ContentLatestSermon.php',
 
 	// Library
-	'getid3'                       => 'system/modules/sermoner/library/getid3/getid3.php',
+	'getid3'                       	=> 'system/modules/sermoner/vendor/james-heinrich/getid3/getid3/getid3.php',
 
 	// Models
-	'sermoner\SermonerItemsModel'  => 'system/modules/sermoner/models/SermonerItemsModel.php',
-	'sermoner\SermonArchiveModel'  => 'system/modules/sermoner/models/SermonArchiveModel.php',
+	'sermoner\SermonerItemsModel'  	=> 'system/modules/sermoner/models/SermonerItemsModel.php',
+	'sermoner\SermonArchiveModel'  	=> 'system/modules/sermoner/models/SermonArchiveModel.php',
 	'sermoner\SermonFeedModel'  	=> 'system/modules/sermoner/models/SermonFeedModel.php',
 
 	// Modules
@@ -53,11 +53,12 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-	'ce_chosenSermon'      => 'system/modules/sermoner/templates',
+	'ce_chosenSermon'      => 'system/modules/sermoner/templates/elements',
 	'mod_sermonlist'       => 'system/modules/sermoner/templates/modules',
 	'mod_sermonlist_empty' => 'system/modules/sermoner/templates/modules',
-	'mod_sermonlist_ajax' => 'system/modules/sermoner/templates/modules',
-	'sermon_full'          => 'system/modules/sermoner/templates',
-	'sermon_startpage'     => 'system/modules/sermoner/templates',
-	'mod_sermonreader'		=> 'system/modules/sermoner/templates/modules/'
+	'mod_sermonlist_ajax' 	=> 'system/modules/sermoner/templates/modules',
+	'mod_sermonreader'		=> 'system/modules/sermoner/templates/modules',
+	'sermon_full'          => 'system/modules/sermoner/templates/sermoner',
+	'sermon_startpage'     => 'system/modules/sermoner/templates/sermoner',
+	
 ));
