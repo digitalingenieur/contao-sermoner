@@ -17,10 +17,6 @@ $GLOBALS['TL_LANG']['XPL']['podcastSubtitle'] = array
     array(
     	'{{date}}',
     	'Datum'
-    ),
-    array(
-    	'{{speaker}}',
-    	'Prediger'
     )
 );
 
