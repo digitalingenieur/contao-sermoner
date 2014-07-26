@@ -29,6 +29,7 @@ $GLOBALS['TL_LANG']['tl_sermon_archive']['groups'] = array('Erlaubte Mitgliederg
  */
 $GLOBALS['TL_LANG']['tl_sermon_archive']['title_legend'] = 'Titel';
 $GLOBALS['TL_LANG']['tl_sermon_archive']['protected_legend'] = 'Zugriffsschutz';
+$GLOBALS['TL_LANG']['tl_sermon_archive']['rss_legend'] = 'RSS-Einstellungen';
 
 
 $GLOBALS['TL_LANG']['tl_sermon_archive']['feeds'] = array('RSS-Feeds', 'RSS-Feeds verwalten');
