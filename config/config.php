@@ -23,7 +23,9 @@ array_insert($GLOBALS['BE_MOD']['content'], 1, array
 		'tables'      => array('tl_sermon_archive', 'tl_sermoner_items', 'tl_sermon_feed'),
 		'icon'        => 'system/modules/sermoner/assets/icon.png',
 		'table'       => array('TableWizard', 'importTable'),
-		'list'        => array('ListWizard', 'importList')
+		'list'        => array('ListWizard', 'importList'),
+		'stylesheet'  => 'system/modules/sermoner/assets/style.css',
+		'import'      => array('SermonerItems', 'importSermon')
 	)
 ));
 
@@ -44,7 +46,6 @@ array_insert($GLOBALS['FE_MOD'], 1, array
 /**
  * CONTENT ELEMENTS
 **/
-
 array_insert($GLOBALS['TL_CTE']['includes'], 1, array(
 	'chosenSermon' => 'ContentChosenSermon',
 	'latestSermon' => 'ContentLatestSermon',

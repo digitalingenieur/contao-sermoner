@@ -132,14 +132,14 @@ $GLOBALS['TL_DCA']['tl_sermon_archive'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'__selector__'                => array('skipReader','protected','showRssFeed'),
-		'default'                     => '{title_legend},title,jumpTo,skipReader;{protected_legend:hide},protected;{rss_legend},showRssFeed;'
+		'__selector__'                => array('enableDirectUpload','protected','showRssFeed'),
+		'default'                     => '{title_legend},title,jumpTo;{directUpload_legend},enableDirectUpload;{protected_legend:hide},protected;{rss_legend},showRssFeed;'
 	),
 
 	// Subpalettes
 	'subpalettes' => array
 	(
-		'skipReader'                  => 'jumpToList',
+		'enableDirectUpload'		  => 'directUploadDestination',
 		'protected'                   => 'groups',
 		'showRssFeed'				  => 'linkedRssFeed'
 	),
@@ -172,6 +172,24 @@ $GLOBALS['TL_DCA']['tl_sermon_archive'] = array
 			'eval'                    => array('mandatory'=>true, 'fieldType'=>'radio'),
 			'sql'                     => "int(10) unsigned NOT NULL default '0'",
 			'relation'                => array('type'=>'hasOne', 'load'=>'eager')
+		),
+		'enableDirectUpload' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_sermon_archive']['enableDirectUpload'],
+			'exclude'                 => true,
+			'filter'                  => true,
+			'inputType'               => 'checkbox',
+			'eval'                    => array('submitOnChange'=>true),
+			'sql'                     => "char(1) NOT NULL default ''"
+		),
+		'directUploadDestination' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_sermon_archive']['directUploadDestination'],
+			'exclude'                 => true,
+			'inputType'               => 'fileTree',
+			'eval'                    => array('mandatory'=>true, 'fieldType'=>'radio', 'files'=>false),
+			'sql'                     => "binary(16) NULL"
+			
 		),
 		'protected' => array
 		(

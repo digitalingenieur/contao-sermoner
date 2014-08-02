@@ -28,7 +28,8 @@ $GLOBALS['TL_DCA']['tl_sermoner_items'] = array
 		'onload_callback' => array
 		(
 			array('tl_sermoner_items', 'checkPermission'),
-			array('tl_sermoner_items', 'generateFeed')
+			array('tl_sermoner_items', 'generateFeed'),
+			array('tl_sermoner_items', 'showImportButton'),
 		),
 		'oncut_callback' => array
 		(
@@ -67,13 +68,13 @@ $GLOBALS['TL_DCA']['tl_sermoner_items'] = array
 		),
 		'global_operations' => array
 		(
-			/*'uploadmp3' => array
+			'import' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_sermoner_items']['uploadmp3'],
-				'href'                => 'act=create',
+				'label'               => &$GLOBALS['TL_LANG']['tl_sermoner_items']['import'],
+				'href'                => 'key=import',
 				'class'               => 'header_upload',
 				'attributes'          => 'onclick="Backend.getScrollOffset()"',
-			),*/
+			),
 			'all' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['MSC']['all'],
@@ -130,7 +131,7 @@ $GLOBALS['TL_DCA']['tl_sermoner_items'] = array
 	'subpalettes' => array
 	(
 		'addImage'                    => 'singleSRC,alt',
-		'addReference_file'		  => 'fileSingleSRC,titleText,linkTitle',
+		'addReference_file'		  	  => 'fileSingleSRC,titleText,linkTitle',
 		'addReference_link'		  	  => 'url,target,titleText,linkTitle',
 	),
 
@@ -620,5 +621,13 @@ class tl_sermoner_items extends Backend
 
 		$objVersions->create();
 		$this->log('A new version of record "tl_sermoner_items.id='.$intId.'" has been created'.$this->getParentEntries('tl_sermoner_items', $intId), __METHOD__, TL_GENERAL);
+	}
+
+	public function showImportButton(DataContainer $dc){
+		if(SermonArchiveModel::findByPk($dc->id)->enableDirectUpload != 1)
+		{
+			unset($GLOBALS['TL_DCA']['tl_sermoner_items']['list']['global_operations']['import']);	
+		}
+		
 	}
 }

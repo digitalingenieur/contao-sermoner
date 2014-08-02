@@ -27,6 +27,7 @@ ClassLoader::addClasses(array
 (
 	// Classes
 	'sermoner\Sermoner'            	=> 'system/modules/sermoner/classes/Sermoner.php',
+	'sermoner\SermonerItems'       	=> 'system/modules/sermoner/classes/SermonerItems.php',
 	'sermoner\FeedPodcast'          => 'system/modules/sermoner/classes/FeedPodcast.php',
 
 	// Elements

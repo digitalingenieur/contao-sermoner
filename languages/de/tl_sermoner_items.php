@@ -46,6 +46,9 @@ $GLOBALS['TL_LANG']['tl_sermoner_items']['reference_legend'] = 'Referenz-Einstel
 $GLOBALS['TL_LANG']['tl_sermoner_items']['publish_legend'] = 'Veröffentlichung';
 
 
+$GLOBALS['TL_LANG']['tl_sermoner_items']['import'] = array('Direktupload','Upload einer mp3-Datei, um Felder automatisiert aus ID3-Tags zu befüllen.');
+$GLOBALS['TL_LANG']['tl_sermoner_items']['source'] = array('Predigt auswählen','Bitte wählen Sie die Audio-Datei der Predigt aus.');
+
 
 /**
  * Buttons
