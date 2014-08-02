@@ -1,6 +1,13 @@
 {
     "name":"samheer/contao-sermoner",
 	"description":"A administration tool to manage sermons, workshops, seminars, etc.",
+	"license":"LGPL-3.0+",
+	"authors":[
+		{
+			"name":"Samuel Heer",
+			"email":"sam.he.heer@gmail.com",
+		}
+	],
 	"type":"contao-module",
     "require": {
     	"php":">=5.3",
