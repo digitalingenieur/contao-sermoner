@@ -1,4 +1,7 @@
 {
+    "name":"samheer/contao-sermoner",
+	"description":"A administration tool to manage sermons, workshops, seminars, etc.",
+	"type":"contao-module",
     "require": {
         "james-heinrich/getid3": "dev-master"
     }
