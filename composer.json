@@ -3,6 +3,7 @@
 	"description":"A administration tool to manage sermons, workshops, seminars, etc.",
 	"type":"contao-module",
     "require": {
+    	"php":">=5.3",
         "james-heinrich/getid3": "dev-master"
     }
 }
