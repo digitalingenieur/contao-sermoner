@@ -32,7 +32,6 @@ ClassLoader::addClasses(array
 
 	// Elements
 	'sermoner\ContentChosenSermon' 	=> 'system/modules/sermoner/elements/ContentChosenSermon.php',
-	'sermoner\ContentLatestSermon' 	=> 'system/modules/sermoner/elements/ContentLatestSermon.php',
 
 	// Library
 	'getid3'                       	=> 'system/modules/sermoner/vendor/james-heinrich/getid3/getid3/getid3.php',

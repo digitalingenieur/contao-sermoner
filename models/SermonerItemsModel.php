@@ -62,34 +62,6 @@ class SermonerItemsModel extends \Model
 		return static::findBy($arrColumns, array((is_numeric($varId) ? $varId : 0), $varId), $arrOptions);
 	}
 
-
-
-	/**
-	 * Find latest published sermon item by their parent ID
-	 *
-	 * @param array   $arrPids     An array of sermon archive IDs
-	 * @param array   $arrOptions  An optional options array
-	 *
-	 * @return \Model|null The model or null if there are no sermons
-	 */
-	public static function findLatestPublishedByPids($arrOptions=array()){
-		$t = static::$strTable;
-
-		$arrOptions = array_merge
-		(
-			array
-			(
-				'limit'  => 1,
-				'order'	 => 'date DESC',
-				'return' => 'Model'
-			),
-
-			$arrOptions
-		);
-
-		return static::find($arrOptions);
-	}
-
 	/**
 	 * Find published sermon items by their parent ID
 	 *

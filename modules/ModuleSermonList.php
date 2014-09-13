@@ -149,7 +149,7 @@ class ModuleSermonList extends \ModuleSermon
 						\SermonFeedModel::findByPk($this->linkedRssFeed)->alias
 					);
 		$objConfig->feedIcon = $this->iconSRC;
-		$objConfig->template = 'sermon_full';
+		$objConfig->template = $this->serm_template;
 
 
 		// Get the items
@@ -170,7 +170,7 @@ class ModuleSermonList extends \ModuleSermon
 		}
 		else
 		{	
-			$this->Template->sermons = $this->Sermoner->parseSermons($objSermons, $objConfig, $this->serm_template);
+			$this->Template->sermons = $this->Sermoner->parseSermons($objSermons, $objConfig);
 		}
 	}
 }
