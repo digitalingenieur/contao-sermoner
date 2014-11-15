@@ -2,7 +2,6 @@
     "name":"samheer/contao-sermoner",
 	"description":"A administration tool to manage audio files of sermons, workshops, seminars, etc.",
 	"license":"LGPL-3.0+",
-	"keywords":["contao","sermon"],
 	"authors":[
 		{
 			"name":"Samuel Heer",
@@ -16,7 +15,6 @@
     "require":{
     	"php":">=5.3",
     	"contao-core": ">=3.2,<4.0.0",
-    	"contao-community-alliance/composer-plugin":"-2.0",
         "james-heinrich/getid3": "dev-master"
     },
     
