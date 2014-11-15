@@ -11,6 +11,14 @@
 	"type":"contao-module",
     "require": {
     	"php":">=5.3",
+    	"contao-core": ">=3.2,<4",
         "james-heinrich/getid3": "dev-master"
+    },
+    "extra":{
+        "contao": {
+            "sources":{
+                "": "system/modules/sermoner"
+            }
+        }
     }
 }
