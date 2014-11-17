@@ -15,7 +15,7 @@
 	"type":"contao-module",
     "require": {
     	"php":">=5.3",
-    	"contao-core": ">=3.2,<4.0.0",
+    	"contao/core": ">=3.2,<4.0.0",
     	"contao-community-alliance/composer-plugin": "2.2.*@dev",
         "james-heinrich/getid3": "dev-master"
     },
