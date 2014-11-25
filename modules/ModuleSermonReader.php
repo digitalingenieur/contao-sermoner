@@ -119,8 +119,12 @@ class ModuleSermonReader extends \ModuleSermon
 				$GLOBALS['TL_HEAD'][] = '<meta property="og:image" content="'.\Environment::get('base').$objModel->path.'"/>';	
 			}
 		}
+		
+		//Configuration
+		$objConfig = new \stdClass();
+		$objConfig->template = $this->serm_template;
 
-		$strSermon = $this->Sermoner->parseSermon($objSermon);
+		$strSermon = $this->Sermoner->parseSermon($objSermon,$objConfig);
 		$this->Template->sermons = $strSermon;
 
 		// Overwrite the page title (see #2853 and #4955)
