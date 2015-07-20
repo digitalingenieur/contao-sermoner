@@ -319,6 +319,7 @@ class Sermoner extends \Frontend
 	 * @param boolean
 	 * @param string
 	 * @param integer
+	 * @param object
 	 * @return string
 	 */
 	public function parseSermon($objSermon, $blnAddArchive=false, $strClass='', $intCount=0, $objConfig)

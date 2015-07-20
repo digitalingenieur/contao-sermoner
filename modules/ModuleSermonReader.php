@@ -124,7 +124,7 @@ class ModuleSermonReader extends \ModuleSermon
 		$objConfig = new \stdClass();
 		$objConfig->template = $this->serm_template;
 
-		$strSermon = $this->Sermoner->parseSermon($objSermon,$objConfig);
+		$strSermon = $this->Sermoner->parseSermon($objSermon, false, '', 0, $objConfig);
 		$this->Template->sermons = $strSermon;
 
 		// Overwrite the page title (see #2853 and #4955)
