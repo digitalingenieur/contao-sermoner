@@ -8,7 +8,7 @@
  * @package   sermoner
  * @author    Samuel Heer
  * @license   GNU/LGPL
- * @copyright Samuel Heer 2014
+ * @copyright Samuel Heer 2014-2015
  */
 
 
@@ -21,7 +21,7 @@ namespace sermoner;
 /**
  * Class Sermoner
  *
- * @copyright  Samuel Heer 2014
+ * @copyright  Samuel Heer 2014-2015
  * @author     Samuel Heer
  */
 class Sermoner extends \Frontend
