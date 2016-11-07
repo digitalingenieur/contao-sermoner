@@ -501,4 +501,3 @@ class Sermoner extends \Frontend
 	}
 }
 
-

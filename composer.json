@@ -1,40 +1,29 @@
 {
-    "name":"samheer/contao-sermoner",
+    "name":"digitalingenieur/sermoner-bundle",
 	"description":"A administration tool to manage audio files of sermons, workshops, seminars, etc.",
 	"license":"LGPL-3.0+",
 	"keywords": ["contao","sermon"],
 	"authors":[
 		{
 			"name":"Samuel Heer",
-			"email":"sam@diging.de"
+			"email":"samuel.heer@diging.de"
 		}
 	],
 	"support":{
 		"issues":"https://github.com/samheer/sermoner/issues"
 		},
-	"type":"contao-module",
     "require": {
     	"php":">=5.3",
     	"contao/core": ">=3.2,<4.0.0",
-    	"contao-community-alliance/composer-plugin": "2.2.*@dev",
         "james-heinrich/getid3": "dev-master"
     },
+    "autoload":{
+        "classmap":["src/"]
+    },
     "extra":{
-        "contao": {
+        "contao":{
             "sources":{
-                "assets": "system/modules/sermoner/assets",
-                "dca": "system/modules/sermoner/dca",
-                "templates": "system/modules/sermoner/templates",
-                "config": "system/modules/sermoner/config",
-                "languages": "system/modules/sermoner/languages"
-            },
-            "autoload":{
-            	"classmap": [
-            		"classes",
-            		"elements",
-            		"models",
-            		"modules"
-            	]
+                "":"system/modules/sermoner"
             }
         }
     }
