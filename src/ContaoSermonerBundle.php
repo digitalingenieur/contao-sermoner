@@ -11,7 +11,7 @@
  */
 
 
-namespace Diging\Contao;
+namespace Diging;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
