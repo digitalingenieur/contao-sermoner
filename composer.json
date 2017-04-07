@@ -24,7 +24,6 @@
         }
     },
     "extra":{
-        "contao-manager-plugin": "Diging\\SermonerBundle\\ContaoManager\\Plugin",
         "contao":{
             "sources":{
                 "":"system/modules/sermoner"
