@@ -10,7 +10,7 @@
 		}
 	],
 	"support":{
-		"issues":"https://github.com/samheer/sermoner/issues"
+		"issues":"https://github.com/digitalingenieur/sermoner/issues"
 		},
     "require": {
     	"php":">=5.3",

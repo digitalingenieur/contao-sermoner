@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Contao Open Source CMS
+ *
+ * Copyright (c) 2005-2017 Leo Feyer
+ *
+ * @package   sermoner
+ * @author    Samuel Heer
+ * @license   GNU/LGPL
+ * @copyright diging.de 2017
+ */
+
 $GLOBALS['TL_DCA']['tl_news_feed']['palettes']['__selector__'][] = 'podcast';
 $GLOBALS['TL_DCA']['tl_news_feed']['palettes']['default'] .= ';{podcast_legend:hide},podcast';
 $GLOBALS['TL_DCA']['tl_news_feed']['subpalettes']['podcast'] = 'itunescategory,itunessubcategory';
