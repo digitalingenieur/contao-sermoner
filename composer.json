@@ -14,17 +14,24 @@
 		},
     "require": {
     	"php":">=5.3",
-    	"contao/core": ">=3.2,<4.0.0",
-        "james-heinrich/getid3": "dev-master"
+    	"contao/core-bundle":"~3.2 || ~4.1",
+        "contao-community-alliance/composer-plugin":"~2.4 || ~3.0"
     },
     "autoload":{
-        "classmap":["src/"]
+        "classmap":["src/"],
+        "psr-4": {
+            "Diging\\SermonerBundle\\": "src/"
+        }
     },
     "extra":{
+        "contao-manager-plugin": "Diging\\SermonerBundle\\ContaoManager\\Plugin",
         "contao":{
             "sources":{
                 "":"system/modules/sermoner"
-            }
+            },
+        "runonce":[
+            "runonce/runonce.php"
+            ]
         }
     }
 }
