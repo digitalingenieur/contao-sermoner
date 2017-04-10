@@ -3,7 +3,7 @@
 	"description":"A administration tool to manage audio files of sermons, workshops, seminars, etc.",
 	"type": "contao-module",
 	"license":"LGPL-3.0+",
-	"keywords": ["contao","sermon"],
+	"keywords": ["contao","sermon","podcast"],
 	"authors":[
 		{
 			"name":"Samuel Heer",

@@ -22,22 +22,16 @@ class SermonerRunonceJob extends Controller
    {
    	//TODO: Implement
    	echo 'IMPLEMENT';
-      	/*if ($this->Database->tableExists('tl_news')) 
-		{
-			if ($this->Database->fieldExists('banner_template', 'tl_banner_category') 
-               && !$this->Database->fieldExists('banner_template', 'tl_module'))
-			{
-                   //Feld anlegen
-                   $this->Database->execute("ALTER TABLE `tl_module` ADD `banner_template` varchar(32) NOT NULL default ''");
-                   //nun sollte es angelegt sein
-                   if ( $this->Database->fieldExists('banner_template', 'tl_banner_category') 
-                     && $this->Database->fieldExists('banner_template', 'tl_module') )
-                   {
-                       //füllen
-                       $this->Database->execute("UPDATE tl_module SET banner_template='mod_banner_list_all' WHERE type='banner' AND banner_template=''");
-                   }
-               }
-		} // if tableExists */
+      if ($this->Database->tableExists('tl_sermoner')) 
+      {
+			  
+        $archives = $this->Database->execute("SELECT * FROM `tl_sermoner`"); 
+        foreach($archives as $archive){
+          $this->Database->prepare("INSERT INTO `tl_news_archive` (`tstamp`,`title`,`jumpTo`) VALUES (?, ?, ?)")->execute($archive->tstamp,$archive->title, $archive->jumpTo);
+        }
+
+      }
+		
    } // run
 } // class
 $objSermonerRunonceJob = new SermonerRunonceJob();
