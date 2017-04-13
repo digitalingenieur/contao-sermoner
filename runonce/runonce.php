@@ -21,17 +21,37 @@ class SermonerRunonceJob extends Controller
    public function run()
    {
    	//TODO: Implement
-   	echo 'IMPLEMENT';
-      if ($this->Database->tableExists('tl_sermoner')) 
-      {
-			  
-        $archives = $this->Database->execute("SELECT * FROM `tl_sermoner`"); 
-        foreach($archives as $archive){
-          $this->Database->prepare("INSERT INTO `tl_news_archive` (`tstamp`,`title`,`jumpTo`) VALUES (?, ?, ?)")->execute($archive->tstamp,$archive->title, $archive->jumpTo);
+   	//echo 'IMPLEMENT';
+     
+    //Das hier funktioniert irgendwie nicht, die Daten werden nicht in die Tabelle geschrieben? Liegt es am Zeitpunkt des Aufrufs? 
+    //AUch nach Googeln nichts wirkliches gefunden.
+    //Vor neuem Versionsprung, wichtig anzupassen!
+
+      if ($this->Database->tableExists('tl_sermoner')) {
+		
+        $objArchives =  \Database::getInstance()->execute("SELECT * FROM tl_sermoner"); 
+
+        while($objArchives->next()){
+          
+          /*$archive = new NewsArchiveModel();
+          $archive->tstamp = $objArchives->tstamp;
+          $archive->title = $objArchives->title;
+          $archive->jumpTo = $objArchives->jumpTo;
+          var_dump($archive);
+          $archive->save();*/
+          $arrInsert = array(
+            'title' => 'Test',
+            'jumpTo' => 14
+            );
+           \Database::getInstance()->prepare("INSERT INTO tl_news_archive %s")->set($arrInsert)->execute();
         }
 
+        //DROP TABLE TL_SERMONER
       }
-		
+
+      $feed = new NewsFeedModel();
+      $feed->title = 'testbnllbla';
+      var_dump($feed->save());
    } // run
 } // class
 $objSermonerRunonceJob = new SermonerRunonceJob();

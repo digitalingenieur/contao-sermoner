@@ -1,26 +1,32 @@
-<div class="layout_simple layout_sermon arc_<?= $this->archive->id ?> block<?= $this->class ?>">
-	  <?php if ($this->addImage): ?>
-        <?php $this->insert('image', $this->arrData); ?>
-   <?php endif; ?>
+<div class="layout_sermon arc_<?= $this->archive->id ?> block<?= $this->class ?>">
+  <?php if ($this->addImage): ?>
+    <?php $this->insert('image', $this->arrData); ?>
+  <?php endif; ?>
   
   <div class="content">
-  <?php if ($this->date): ?><time class="small" datetime="<?= $this->datetime ?>"><?= date('d.m.Y', $this->timestamp); ?></time> <?php endif; ?> - <span><?= $this->subHeadline ?></span>
+  <?php if ($this->date): ?><time class="small" datetime="<?= $this->datetime ?>"><?= date('d.m.Y', $this->timestamp); ?></time> <?php endif; ?>
+
+    <?php if($this->speaker || $this->moderator): ?>
+      - <span>
+          <?= $this->speaker . ' (Moderator: '.$this->moderator.')' ?>
+        </span>
+    <?php endif; ?>
   
-  <h4><?= $this->newsHeadline ?></h4>
+  <h2><?= $this->newsHeadline ?></h2>
   
   <?php if ($this->hasText): ?>
       <?= $this->text ?>
   <?php endif; ?>
   
   <?php if ($this->enclosure): ?>
-	<audio <?= $enclosure['filesize'] ?> preload="none" controls>
-		<?php foreach ($this->enclosure as $enclosure): ?>
-	    	<source type="<?= $enclosure['mime'] ?>" src="<?= $enclosure['enclosure'] ?>" title="<?= $enclosure['title'] ?>">
-		<?php endforeach; ?>
-	</audio>
-	<div class="enclosure">
-		<a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>">Download Predigt <span class="size">(<?= $enclosure['filesize'] ?>)</span></a>
-	  </div>
+   <audio <?= $enclosure['filesize'] ?> preload="none" controls>
+      <?php foreach ($this->enclosure as $enclosure): ?>
+          <source type="<?= $enclosure['mime'] ?>" src="<?= $enclosure['enclosure'] ?>" title="<?= $enclosure['title'] ?>">
+      <?php endforeach; ?>
+   </audio>
+   <div class="enclosure">
+      <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>">Download Predigt <span class="size">(<?= $enclosure['filesize'] ?>)</span></a>
+    </div>
   <?php endif; ?>
   </div>
 </div>
