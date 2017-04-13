@@ -12,7 +12,7 @@
  */
 
 $GLOBALS['TL_DCA']['tl_news_feed']['palettes']['__selector__'][] = 'podcast';
-$GLOBALS['TL_DCA']['tl_news_feed']['palettes']['default'] .= ';{podcast_legend:hide},podcast';
+$GLOBALS['TL_DCA']['tl_news_feed']['palettes']['default'] .= ';{podcast_legend},podcast';
 $GLOBALS['TL_DCA']['tl_news_feed']['subpalettes']['podcast'] = 'itunescategory,itunessubcategory';
 
 $GLOBALS['TL_DCA']['tl_news_feed']['fields']['podcast'] = array(
