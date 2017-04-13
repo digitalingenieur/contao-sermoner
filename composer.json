@@ -14,7 +14,6 @@
 		"issues":"https://github.com/digitalingenieur/sermoner/issues"
 		},
     "require": {
-    	"php":">=5.3",
     	"contao/core-bundle":"~3.2 || ~4.1",
         "contao-community-alliance/composer-plugin":"~2.4 || ~3.0"
     },
