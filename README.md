@@ -12,7 +12,7 @@ Contao Sermoner adds two fields (speaker, moderator) in the news section. Please
 * image: season image oder image of the speaker
 * add enclosure: use enclosure for the audio file (you can also put other images, scripts, slides etc to the enclosure. please make sure there is just one audio file.)
 
-To play the audio file directly in the fronted use template *news_sermon* in the your module.
+To play the audio file directly in the fronted use template *news_sermon* in your module.
 
 ### Podcast Feed
 If you want to publish your sermons as a rss feed (e.g. for iTunes) have a look under *RSS Feeds* in the news section and set the rss feed as a podcast-feed. There you can provide itunes categories.
